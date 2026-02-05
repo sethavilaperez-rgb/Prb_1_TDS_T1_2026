@@ -13,11 +13,15 @@ print("El número es:", resultado)
 print("2. Calificación")
 calificacion = int(input("Ingresa la calificación (0-100): "))
 
+while calificacion < 0 or calificacion > 100:
+    print("Calificación invalida")
+    calificacion = int(input("Ingresa la calificación (0-100): "))
 """
 Simplemente se utiliza un if principal para iniciar la condición de manera 
 ordenada de mayor a menor para que cada 10 puntos sea una calificación  diferente,
 con elif para las opciones posteriores y finalmente un else para todo lo demás abajo de 59.
 """
+
 if calificacion >= 90:
     letra = "A"
 elif calificacion >= 80:
