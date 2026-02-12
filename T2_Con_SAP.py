@@ -11,29 +11,33 @@ print("El número es:", resultado)
 
 # 2. Calificación
 print("2. Calificación")
-calificacion = int(input("Ingresa la calificación (0-100): "))
-
-while calificacion < 0 or calificacion > 100:
-    print("Calificación invalida")
+try:
     calificacion = int(input("Ingresa la calificación (0-100): "))
-"""
-Simplemente se utiliza un if principal para iniciar la condición de manera 
-ordenada de mayor a menor para que cada 10 puntos sea una calificación  diferente,
-con elif para las opciones posteriores y finalmente un else para todo lo demás abajo de 59.
-"""
-
-if calificacion >= 90:
-    letra = "A"
-elif calificacion >= 80:
-    letra = "B"
-elif calificacion >= 70:
-    letra = "C"
-elif calificacion >= 60:
-    letra = "D"
+except ValueError:
+    calificacion=0
+    print("Entrada invalida, se pondra en 0")
 else:
-    letra = "F"
+    while calificacion < 0 or calificacion > 100:
+        print("Calificación invalida")
+        calificacion = int(input("Ingresa la calificación (0-100): "))
+    """
+    Simplemente se utiliza un if principal para iniciar la condición de manera 
+    ordenada de mayor a menor para que cada 10 puntos sea una calificación  diferente,
+    con elif para las opciones posteriores y finalmente un else para todo lo demás abajo de 59.
+    """
+    
+    if calificacion >= 90:
+        letra = "A"
+    elif calificacion >= 80:
+        letra = "B"
+    elif calificacion >= 70:
+        letra = "C"
+    elif calificacion >= 60:
+        letra = "D"
+    else:
+        letra = "F"
 
-print("La calificación es:", letra)
+    print("La calificación es:", letra)
 
 # 3. Mayor de tres números
 print("3. Mayor de tres números")
